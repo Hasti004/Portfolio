@@ -1,0 +1,230 @@
+.about {
+    padding: 2rem;
+    min-height: 100vh;
+    background: transparent;
+}
+
+.about h1 {
+    color: #c084f5;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+}
+
+.bio-section,
+.interests-section {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bio-section:hover,
+.interests-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.bio-section h2,
+.interests-section h2 {
+    color: #c084f5;
+    margin-bottom: 1.5rem;
+}
+
+.education-section {
+    margin: 2rem 0;
+}
+
+.education-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.education-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(192, 132, 245, 0.3);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -2.4rem;
+    top: 1.5rem;
+    width: 1rem;
+    height: 1rem;
+    background: #c084f5;
+    border-radius: 50%;
+    border: 2px solid #1a1a2e;
+    box-shadow: 0 0 10px rgba(192, 132, 245, 0.5);
+}
+
+.education-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 4px 20px rgba(192, 132, 245, 0.2);
+    border-color: rgba(192, 132, 245, 0.3);
+}
+
+.education-card h3 {
+    color: #c084f5;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.education-card h4 {
+    color: #e6e6fa;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.education-card .location {
+    color: #e6e6fa;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.education-card .duration {
+    color: #c084f5;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.education-card .gpa {
+    color: #e6e6fa;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.tech-section {
+    background-color: #1a1a2e;
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tech-section h2 {
+    color: white;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tech-section h2 .section-icon {
+    color: #c084f5;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.tech-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(192, 132, 245, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+    border-color: #c084f5;
+    box-shadow: 0 4px 20px rgba(192, 132, 245, 0.2);
+}
+
+.tech-card:hover::before {
+    transform: translateX(100%);
+}
+
+.tech-card i {
+    font-size: 2.5rem;
+    color: #c084f5;
+    transition: transform 0.3s ease;
+}
+
+.tech-card:hover i {
+    transform: scale(1.1);
+}
+
+.tech-card span {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Update text colors */
+.bio-section p,
+.interests-section li {
+    color: #e6e6fa;
+}
+
+.tech-card span {
+    color: #e6e6fa;
+}
+
+@media (max-width: 768px) {
+    .education-timeline {
+        padding-left: 1.5rem;
+    }
+
+    .timeline-dot {
+        left: -1.9rem;
+        width: 0.8rem;
+        height: 0.8rem;
+    }
+
+    .education-card {
+        padding: 1.2rem;
+    }
+}
