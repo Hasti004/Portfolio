@@ -42,7 +42,7 @@ function Home() {
                             <TypeAnimation
                                 sequence={[
                                     'Designer', 2000,
-                                    'ML Enthusiast', 2000,
+                                    'Machine Learning Enthusiast', 2000,
                                     'UI/UX Explorer', 2000,
                                     'Research-Oriented', 2000,
                                     'Creative Thinker', 2000,
