@@ -29,7 +29,7 @@ const DATA = {
   name: "Hasti Vakani",
   field: "Computer Science",
   heroEyebrow: "Portfolio · 2026",
-  heroTagline: "Founder · ML researcher · UI/UX designer",
+  heroTagline: "Engineer by training. Builder by habit.",
   headline: "Spectral signatures, neural nets, and shipped products.",
   about:
     "B.Tech in Computer Science & Engineering from CHARUSAT (CGPA 8.40), co-founder of Byteosaurus, managing partner at UniMisk ERP Solutions, and an AI project trainee at the Physical Research Laboratory. I publish peer-reviewed ML research — plant-disease spectroscopy, anomaly detection, forecasting — and ship B2B/B2C SaaS products used by hundreds of people.",
@@ -539,12 +539,12 @@ function drawCard(octx, cw, ch) {
   // Horizontal words [name, size, x, y] — strong size contrast (13–38).
   const horiz = [
     ["Machine learning", 38, 24, 80],
-    ["IoT & embedded", 34, 24, 150],
-    ["Computer vision", 16, 24, 186],
+    ["Spectral ML", 34, 24, 150],
+    ["Anomaly detection", 16, 24, 186],
     ["SaaS platforms", 22, 24, 214],
-    ["UI/UX design", 28, 24, 250],
+    ["Product design", 28, 24, 250],
     ["ERP & automation", 15, 24, 300],
-    ["Game development", 13, 24, 326],
+    ["Backend systems", 13, 24, 326],
   ];
   octx.fillStyle = "#181818";
   horiz.forEach(([name, size, x, y]) => {
@@ -1124,10 +1124,7 @@ export default function LabResearch() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="mt-10 max-w-xl"
             >
-              <p className="lr-serif italic text-lg" style={{ color: C.muted }}>
-                Engineer by training. Builder by habit.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3">
                 <a
                   href="#research"
                   className="inline-flex items-center gap-2 px-5 py-3 text-sm font-medium rounded-sm transition-colors"
@@ -1143,6 +1140,9 @@ export default function LabResearch() {
                   Get in touch
                 </a>
               </div>
+              <p className="lr-mono text-xs mt-6" style={{ color: C.muted }}>
+                Open to software engineering and ML roles at product-focused companies.
+              </p>
             </motion.div>
           </div>
 
