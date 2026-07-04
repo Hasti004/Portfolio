@@ -44,7 +44,7 @@ const DATA = {
     { label: "LinkedIn", url: "https://www.linkedin.com/in/hasti-vakani9104" },
     { label: "Google Scholar", url: "https://scholar.google.co.in/citations?hl=en&user=X67WAiYAAAAJ" },
     { label: "ORCID", url: "https://orcid.org/0009-0006-5905-1007" },
-    { label: "Portfolio", url: "https://hastivakani.tech" },
+    { label: "Portfolio", url: "https://hastivakani.com" },
   ],
 };
 
@@ -991,22 +991,22 @@ const HOMEPAGE_SCHEMA = {
   "@graph": [
     {
       "@type": "ProfilePage",
-      "@id": "https://hastivakani.tech/#profilepage",
-      "url": "https://hastivakani.tech",
+      "@id": "https://hastivakani.com/#profilepage",
+      "url": "https://hastivakani.com",
       "name": "Hasti Vakani — ML Researcher, Founder & Software Engineer",
-      "mainEntity": { "@id": "https://hastivakani.tech#person" }
+      "mainEntity": { "@id": "https://hastivakani.com#person" }
     },
     {
       "@type": "Person",
-      "@id": "https://hastivakani.tech#person",
+      "@id": "https://hastivakani.com#person",
       "name": "Hasti Vakani",
       "givenName": "Hasti",
       "familyName": "Vakani",
       "jobTitle": "Machine Learning Researcher & Founder",
       "email": "hasti.vakani9104@gmail.com",
       "telephone": "+91 93746 15759",
-      "url": "https://hastivakani.tech",
-      "image": "https://hastivakani.tech/hv-logo.png",
+      "url": "https://hastivakani.com",
+      "image": "https://hastivakani.com/hv-logo.png",
       "sameAs": [
         "https://github.com/Hasti004",
         "https://www.linkedin.com/in/hasti-vakani9104",
@@ -1077,7 +1077,7 @@ export default function LabResearch() {
       <SEO
         title="Hasti Vakani — ML Researcher, Founder & Software Engineer"
         description="ML researcher, founder & software engineer. B.Tech CS (CGPA 8.40), co-founder of Byteosaurus, managing partner at UniMisk ERP Solutions. 7 peer-reviewed papers in Elsevier and Springer."
-        canonical="https://hastivakani.tech"
+        canonical="https://hastivakani.com"
         schema={HOMEPAGE_SCHEMA}
       />
 

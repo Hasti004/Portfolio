@@ -10,13 +10,13 @@ const CV_SCHEMA = {
   "@graph": [
     {
       "@type": "WebPage",
-      "url": "https://hastivakani.tech/cv",
+      "url": "https://hastivakani.com/cv",
       "name": "Hasti Vakani — CV | ML Researcher & Founder",
       "breadcrumb": {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hastivakani.tech" },
-          { "@type": "ListItem", "position": 2, "name": "CV", "item": "https://hastivakani.tech/cv" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hastivakani.com" },
+          { "@type": "ListItem", "position": 2, "name": "CV", "item": "https://hastivakani.com/cv" }
         ]
       }
     },
@@ -97,9 +97,9 @@ export default function CVPage() {
       <SEO
         title="Hasti Vakani — CV | ML Researcher & Founder"
         description="B.Tech CS (CGPA 8.40), co-founder of Byteosaurus, managing partner at UniMisk ERP Solutions, AI researcher at Physical Research Laboratory."
-        canonical="https://hastivakani.tech/cv"
+        canonical="https://hastivakani.com/cv"
         ogType="profile"
-        ogImage="https://hastivakani.tech/og-cv.png"
+        ogImage="https://hastivakani.com/og-cv.png"
         schema={CV_SCHEMA}
       />
 

@@ -39,20 +39,20 @@ export default function OnTheRecord() {
     "@graph": [
       {
         "@type": "CollectionPage",
-        "url": "https://hastivakani.tech/on-the-record",
+        "url": "https://hastivakani.com/on-the-record",
         "name": `On the Record — ${PAPERS.length} Peer-Reviewed Papers | Hasti Vakani`,
         "description": `${PAPERS.length} peer-reviewed papers across Elsevier and Springer — plant-disease spectroscopy, anomaly detection, and predictive modelling.`,
         "breadcrumb": {
           "@type": "BreadcrumbList",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hastivakani.tech" },
-            { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://hastivakani.tech/on-the-record" }
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hastivakani.com" },
+            { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://hastivakani.com/on-the-record" }
           ]
         },
         "hasPart": PAPERS.map(p => ({
           "@type": "ScholarlyArticle",
           "headline": p.title,
-          "author": [{ "@type": "Person", "name": "Hasti Vakani", "@id": "https://hastivakani.tech#person" }],
+          "author": [{ "@type": "Person", "name": "Hasti Vakani", "@id": "https://hastivakani.com#person" }],
           "datePublished": p.year,
           "inLanguage": "en",
           "publisher": {
@@ -72,9 +72,9 @@ export default function OnTheRecord() {
       <SEO
         title={`On the Record — ${PAPERS.length} Peer-Reviewed Papers | Hasti Vakani`}
         description={`Plant-disease spectroscopy, anomaly detection, and predictive modeling. ${PAPERS.length} peer-reviewed papers published in Elsevier and Springer.`}
-        canonical="https://hastivakani.tech/on-the-record"
+        canonical="https://hastivakani.com/on-the-record"
         ogType="article"
-        ogImage="https://hastivakani.tech/og-research.png"
+        ogImage="https://hastivakani.com/og-research.png"
         schema={schema}
       />
 

@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 
-const BASE_URL = 'https://hastivakani.tech';
+const BASE_URL = 'https://hastivakani.com';
 const DEFAULT_IMAGE = `${BASE_URL}/og-home.png`;
 
 export default function SEO({ title, description, canonical, ogType = 'website', ogImage = DEFAULT_IMAGE, schema }) {
