@@ -1,0 +1,130 @@
+.experience {
+    padding: 2rem;
+    min-height: 100vh;
+    background: transparent;
+}
+
+.experience h1 {
+    color: #c084f5;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.experience-section {
+    margin-bottom: 4rem;
+}
+
+.experience-section h2 {
+    color: #e6e6fa;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.section-icon {
+    color: #c084f5;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.experience-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.card-header h3 {
+    color: #c084f5;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.period {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+}
+
+.experience-card h4 {
+    color: #e6e6fa;
+    margin-bottom: 0.5rem;
+}
+
+.location {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.experience-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.experience-card li {
+    color: #e6e6fa;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.experience-card li::before {
+    content: "•";
+    color: #c084f5;
+    position: absolute;
+    left: 0;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.certification-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+}
+
+.certification-card h3 {
+    color: #e6e6fa;
+    margin-bottom: 0.5rem;
+}
+
+.certification-card .year {
+    color: #c084f5;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+}

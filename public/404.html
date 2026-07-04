@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Hasti Vakani</title>
+  <!--
+    GitHub Pages SPA fallback. For an unknown path (e.g. /on-the-record), GitHub
+    serves this file; it redirects to the app root encoding the path in the query
+    string, which index.html then decodes back into the real URL for React Router.
+    Custom-domain (root) deploy -> pathSegmentsToKeep = 0.
+  -->
+  <script>
+    var pathSegmentsToKeep = 0;
+    var l = window.location;
+    l.replace(
+      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+      l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+      l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+      (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+      l.hash
+    );
+  </script>
+</head>
+
+<body></body>
+
+</html>
