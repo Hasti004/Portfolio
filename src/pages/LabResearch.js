@@ -9,6 +9,7 @@ import {
 import * as THREE from "three";
 import { GPUComputationRenderer } from "three/examples/jsm/misc/GPUComputationRenderer.js";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 /**
  * The Lab — academic / research editorial portfolio.
@@ -985,6 +986,57 @@ function LabNav({ name, links }) {
   );
 }
 
+const HOMEPAGE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": "https://hastivakani.tech/#profilepage",
+      "url": "https://hastivakani.tech",
+      "name": "Hasti Vakani — ML Researcher, Founder & Software Engineer",
+      "mainEntity": { "@id": "https://hastivakani.tech#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://hastivakani.tech#person",
+      "name": "Hasti Vakani",
+      "givenName": "Hasti",
+      "familyName": "Vakani",
+      "jobTitle": "Machine Learning Researcher & Founder",
+      "email": "hasti.vakani9104@gmail.com",
+      "telephone": "+91 93746 15759",
+      "url": "https://hastivakani.tech",
+      "image": "https://hastivakani.tech/hv-logo.png",
+      "sameAs": [
+        "https://github.com/Hasti004",
+        "https://www.linkedin.com/in/hasti-vakani9104",
+        "https://scholar.google.co.in/citations?hl=en&user=X67WAiYAAAAJ",
+        "https://orcid.org/0009-0006-5905-1007"
+      ],
+      "knowsAbout": [
+        "Machine Learning", "Plant Disease Detection", "Spectroscopy",
+        "Deep Learning", "Anomaly Detection", "SaaS Development", "UI/UX Design"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "CHARUSAT University",
+        "url": "https://charusat.ac.in"
+      },
+      "affiliation": [
+        { "@type": "Organization", "name": "Byteosaurus" },
+        { "@type": "Organization", "name": "UniMisk ERP Solutions" },
+        { "@type": "Organization", "name": "Physical Research Laboratory" }
+      ],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "degree",
+        "name": "B.Tech in Computer Science & Engineering",
+        "description": "CGPA 8.40/10"
+      }
+    }
+  ]
+};
+
 export default function LabResearch() {
   const { name, heroEyebrow, heroTagline, gpa, email, phone, links } = DATA;
 
@@ -1022,6 +1074,12 @@ export default function LabResearch() {
   return (
     <div className="lr-root min-h-screen">
       <style>{STYLE}</style>
+      <SEO
+        title="Hasti Vakani — ML Researcher, Founder & Software Engineer"
+        description="ML researcher, founder & software engineer. B.Tech CS (CGPA 8.40), co-founder of Byteosaurus, managing partner at UniMisk ERP Solutions. 7 peer-reviewed papers in Elsevier and Springer."
+        canonical="https://hastivakani.tech"
+        schema={HOMEPAGE_SCHEMA}
+      />
 
       <LabNav name={name} links={navLinks} />
 

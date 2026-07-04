@@ -3,6 +3,62 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { C, STYLE, EXPERIENCE, EDUCATION, SKILLS, PAPERS } from "./LabResearch";
 import resumePDF from "../assets/resume.pdf";
+import SEO from "../components/SEO";
+
+const CV_SCHEMA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "url": "https://hastivakani.tech/cv",
+      "name": "Hasti Vakani — CV | ML Researcher & Founder",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hastivakani.tech" },
+          { "@type": "ListItem", "position": 2, "name": "CV", "item": "https://hastivakani.tech/cv" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Hasti Vakani's educational background?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hasti Vakani holds a B.Tech in Computer Science & Engineering from CHARUSAT University with a CGPA of 8.40/10."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many peer-reviewed papers has Hasti Vakani published?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hasti Vakani has authored 7 peer-reviewed papers published in Elsevier and Springer, focusing on plant-disease detection, anomaly detection, and predictive modeling."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What companies has Hasti Vakani co-founded?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hasti Vakani is the co-founder of Byteosaurus, a career and resume platform, and managing partner of UniMisk ERP Solutions, a B2B SaaS platform for enterprise resource planning."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are Hasti Vakani's research areas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hasti Vakani's research focuses on plant-disease spectroscopy, anomaly detection in industrial machines, predictive modeling, and AI-driven image classification using CNNs and deep learning."
+          }
+        }
+      ]
+    }
+  ]
+};
 
 const fade = {
   initial: { opacity: 0, y: 20 },
@@ -38,6 +94,14 @@ export default function CVPage() {
   return (
     <div className="lr-root min-h-screen" style={{ backgroundColor: C.paper, color: C.ink }}>
       <style>{STYLE}</style>
+      <SEO
+        title="Hasti Vakani — CV | ML Researcher & Founder"
+        description="B.Tech CS (CGPA 8.40), co-founder of Byteosaurus, managing partner at UniMisk ERP Solutions, AI researcher at Physical Research Laboratory."
+        canonical="https://hastivakani.tech/cv"
+        ogType="profile"
+        ogImage="https://hastivakani.tech/og-cv.png"
+        schema={CV_SCHEMA}
+      />
 
       {/* ── STICKY HEADER ── */}
       <header

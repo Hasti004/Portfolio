@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { PAPERS, C, STYLE } from "./LabResearch";
+import SEO from "../components/SEO";
 
 /**
  * "On the record" — the full research page listing every paper. Linked from the
@@ -33,9 +34,49 @@ export default function OnTheRecord() {
   const journals = PAPERS.filter((p) => p.status?.toLowerCase().includes("journal"));
   const conferences = PAPERS.filter((p) => !p.status?.toLowerCase().includes("journal"));
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "url": "https://hastivakani.tech/on-the-record",
+        "name": `On the Record — ${PAPERS.length} Peer-Reviewed Papers | Hasti Vakani`,
+        "description": `${PAPERS.length} peer-reviewed papers across Elsevier and Springer — plant-disease spectroscopy, anomaly detection, and predictive modelling.`,
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hastivakani.tech" },
+            { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://hastivakani.tech/on-the-record" }
+          ]
+        },
+        "hasPart": PAPERS.map(p => ({
+          "@type": "ScholarlyArticle",
+          "headline": p.title,
+          "author": [{ "@type": "Person", "name": "Hasti Vakani", "@id": "https://hastivakani.tech#person" }],
+          "datePublished": p.year,
+          "inLanguage": "en",
+          "publisher": {
+            "@type": "Organization",
+            "name": p.venue.toLowerCase().includes("elsevier") ? "Elsevier" : "Springer"
+          },
+          ...(p.url ? { "url": p.url } : {}),
+          ...(p.abstract ? { "description": p.abstract } : {})
+        }))
+      }
+    ]
+  };
+
   return (
     <div className="lr-root min-h-screen" style={{ backgroundColor: C.ink, color: C.paper }}>
       <style>{STYLE}</style>
+      <SEO
+        title={`On the Record — ${PAPERS.length} Peer-Reviewed Papers | Hasti Vakani`}
+        description={`Plant-disease spectroscopy, anomaly detection, and predictive modeling. ${PAPERS.length} peer-reviewed papers published in Elsevier and Springer.`}
+        canonical="https://hastivakani.tech/on-the-record"
+        ogType="article"
+        ogImage="https://hastivakani.tech/og-research.png"
+        schema={schema}
+      />
 
       {/* Top bar */}
       <header className="sticky top-0 z-50" style={{ backgroundColor: "rgba(20,20,20,0.72)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", borderBottom: `1px solid color-mix(in oklch, var(--lr-paper) 14%, transparent)` }}>
