@@ -1140,9 +1140,6 @@ export default function LabResearch() {
                   Get in touch
                 </a>
               </div>
-              <p className="lr-mono text-xs mt-6" style={{ color: C.muted }}>
-                Open to software engineering and ML roles at product-focused companies.
-              </p>
             </motion.div>
           </div>
 
